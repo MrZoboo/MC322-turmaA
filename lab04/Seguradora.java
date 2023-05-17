@@ -8,8 +8,9 @@ public class Seguradora {
     private String telefone;
     private String email;
     private String endereco;
-    private List <Sinistro> listaSinistros = new ArrayList<>();
-    private List <Cliente> listaClientes = new ArrayList<>();
+    protected List <Sinistro> listaSinistros = new ArrayList<>();
+    protected List <Cliente> listaClientes = new ArrayList<>();
+    protected List <Veiculo> listaVeiculos = new ArrayList<>();
 
     //CONSTRUCTOR
     public Seguradora(String nome, String telefone, String email, String endereco){
@@ -43,6 +44,9 @@ public class Seguradora {
     }
     public void setEndereco(String endereco){
         this.endereco = endereco;
+    }
+    public void adicionaVeiculo(Veiculo veiculo){
+        listaVeiculos.add(veiculo);
     }
     //CADASTRAR VEICULO
     public void cadastroVeiculo(Cliente cliente, String placa, String marca , String modelo, int anoFabricacao){
@@ -78,6 +82,7 @@ public class Seguradora {
             }
         }
     }
+
 
     //LISTAR CLIENTES (STRING)
     public void listarClientes(){
@@ -129,4 +134,15 @@ public class Seguradora {
     }
 
     // TRANSFERENCIA DE SEGURO
+    public void transferenciaSeguro(Cliente cliente1, Cliente cliente2){
+        for(Sinistro s: listaSinistros){
+            if(s.getCliente().getNome().equals(cliente1.nome)){
+                s.setCliente(cliente2);
+            }
+        }
+        for(Veiculo v: cliente1.listaVeiculos){
+            cliente2.listaVeiculos.add(v);
+        }
+        cliente1.listaVeiculos.clear();
+    }
 }
