@@ -100,7 +100,7 @@ public class Main {
         MC322_Insurance.removeCliente(MC322_Insurance.getListaClientes(0));
         MC322_Insurance.removeSinistro(MC322_Insurance.getListaSinistros(0));
         in.close();
-
+        
     }
 
     

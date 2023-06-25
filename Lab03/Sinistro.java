@@ -20,7 +20,7 @@ public class Sinistro {
     }
 
     // FUNCTION THAT GENERATES UNIQUE IDS
-    private int GenerateIds(){
+    private  int GenerateIds(){
         int A = (int) (Math.random()*1000000);
         int B = 0;
         int C = 0;

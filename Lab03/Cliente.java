@@ -60,7 +60,7 @@ public class Cliente {
         this.classeEconomica = classeEconomica;
     }
     public Veiculo getVeiculo(int i){
-        return listaVeiculos.get(i);
+        return listaVeiculos.get(i); 
     }
 
     //ADDING/REMOVING A VELICHE IN THE LIST
